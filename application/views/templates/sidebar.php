@@ -4,9 +4,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-book"></i>
+                    <i class="fas fa-gamepad"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Pustaka Booking</div>
+                <div class="sidebar-brand-text mx-3">Yakitori Store</div>
             </a>
 
             <!-- Divider -->
@@ -40,12 +40,12 @@
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('buku/kategori'); ?>">
                                 <i class="fas fa-fw fa-book"></i>
-                                <span>Kategori Buku</span></a>
+                                <span>Kategori Game</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('buku'); ?>">
                                 <i class="fa fa-fw fa-book"></i>
-                                <span>Data Buku</span></a>
+                                <span>Data Game</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('user/anggota'); ?>">
@@ -68,7 +68,7 @@
                 <li class="nav-item">
                     <a class="nav-link pb-0" href="<?= base_url('pinjam'); ?>">
                         <i class="fa fa-fw fa-shopping-cart"></i>
-                        <span>Data Peminjaman</span></a>
+                        <span>Data Pembelian Game</span></a>
                 </li>
                 
                 <li class="nav-item">
@@ -84,33 +84,7 @@
                 <hr class="sidebar-divider mt-3">
 
                 <!-- Heading -->
-                <div class="sidebar-heading">
-                    Laporan
-                </div>
-
-                <!-- Nav Item - Dashboard -->
-                <li class="nav-item active">
-
-                    <!-- Nav Item - Dashboard -->
-                <li class="nav-item">
-                    <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_buku'); ?>">
-                        <i class="fa fa-fw fa-address-book"></i>
-                        <span>Laporan Data Buku</span></a>
-                </li>
                 
-                <li class="nav-item">
-                    <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_anggota'); ?>">
-                    <i class="fa fa-fw fa-address-book"></i>
-                    <span>Laporan Data Anggota</span></a>
-                
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_pinjam'); ?>">
-                    <i class="fa fa-fw fa-address-book"></i>
-                    <span>Laporan Peminjaman</span></a>
-                
-                </li>
 
                 </li>
 

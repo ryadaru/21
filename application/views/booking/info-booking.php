@@ -9,7 +9,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Buku Yang ingin Anda Pinjam Adalah Sebagai berikut:</td>
+                    <td>Game Yang ingin Anda Pinjam Adalah Sebagai berikut:</td>
                 </tr>
             <?php } ?>
             <tr>

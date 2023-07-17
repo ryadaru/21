@@ -24,7 +24,7 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-md font-weight-bold text-white text-uppercase mb-1">Stok Buku Terdaftar</div>
+              <div class="text-md font-weight-bold text-white text-uppercase mb-1">Stok Game Terdaftar</div>
               <div class="h1 mb-0 font-weight-bold text-white">
                 <?php
                 $where = ['stok != 0'];
@@ -46,7 +46,7 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-md font-weight-bold text-white text-uppercase mb-1">Buku yang dipinjam</div>
+              <div class="text-md font-weight-bold text-white text-uppercase mb-1">Game Yang Terjual</div>
               <div class="h1 mb-0 font-weight-bold text-white">
                 <?php
                 $where = ['dipinjam != 0'];
@@ -68,7 +68,7 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-md font-weight-bold text-white text-uppercase mb-1">Buku yang dibooking</div>
+              <div class="text-md font-weight-bold text-white text-uppercase mb-1">Game yang preorder</div>
               <div class="h1 mb-0 font-weight-bold text-white">
                 <?php
                 $where = ['dibooking !=0'];
@@ -128,19 +128,18 @@
 
     <div class="table-responsive table-bordered col-sm-5 ml-auto mr-auto mt-2">
       <div class="page-header">
-        <span class="fas fa-book text-warning mt-2"> Data Buku</span>
+        <span class="fas fa-book text-warning mt-2"> Data Game</span>
         <a href="<?= base_url('buku'); ?>"><i class="fas fa-search text-primary mt-2 float-right"> Tampilkan</i></a>
       </div>
       <div class="table-responsive">
         <table class="table mt-3" id="table-datatable">
           <thead>
             <tr>
-              <th>#</th>
-              <th>Judul Buku</th>
-              <th>Pengarang</th>
-              <th>Penerbit</th>
-              <th>Tahun Terbit</th>
-              <th>ISBN</th>
+              <th>No</th>
+              <th>Judul Game</th>
+              <th>Pembuat</th>
+              <th>Perangkat</th>
+              <th>Tahun Rilis</th>
               <th>Stok</th>
             </tr>
           </thead>

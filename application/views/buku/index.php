@@ -10,19 +10,18 @@
                 </div>
             <?php }?>
             <?= $this->session->flashdata('pesan'); ?>
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#bukuBaruModal"><i class="fas fa-file-alt"></i> Buku Baru</a>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#bukuBaruModal"><i class="fas fa-file-alt"></i> Game Baru</a>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Judul</th>
-                        <th scope="col">Pengarang</th>
-                        <th scope="col">Penerbit</th>
-                        <th scope="col">Tahun Terbit</th>
-                        <th scope="col">ISBN</th>
+                        <th scope="col">Negara</th>
+                        <th scope="col">Devoloper</th>
+                        <th scope="col">Tahun Rilis</th>
                         <th scope="col">Stok</th>
-                        <th scope="col">DiPinjam</th>
-                        <th scope="col">DiBooking</th>
+                        <th scope="col">Dipinjam</th>
+                        <th scope="col">Dibooking</th>
                         <th scope="col">Gambar</th>
                         <th scope="col">Pilihan</th>
                     </tr>
@@ -38,7 +37,7 @@
                         <td><?= $b['pengarang']; ?></td>
                         <td><?= $b['penerbit']; ?></td>
                         <td><?= $b['tahun_terbit']; ?></td>
-                        <td><?= $b['isbn']; ?></td>
+                        
                         <td><?= $b['stok']; ?></td>
                         <td><?= $b['dipinjam']; ?></td>
                         <td><?= $b['dibooking']; ?></td>
@@ -64,12 +63,12 @@
 </div>
 <!-- End of Main Content -->
 
-<!-- Modal Tambah buku baru-->
+<!-- Modal Tambah game baru-->
 <div class="modal fade" id="bukuBaruModal" tabindex="-1" role="dialog" aria-labelledby="bukuBaruModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="bukuBaruModalLabel">Tambah Buku</h5>
+                <h5 class="modal-title" id="bukuBaruModalLabel">Tambah Game</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -77,7 +76,7 @@
             <form action="<?= base_url('buku'); ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul Buku">
+                        <input type="text" class="form-control form-control-user" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul Game">
                     </div>
                     <div class="form-group">
                         <select name="id_kategori" class="form-control form-control-user">
@@ -89,7 +88,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="penerbit" name="penerbit" placeholder="Masukkan nama penerbit">
+                        <input type="text" class="form-control form-control-user" id="pengarang" name="pengarang" placeholder="Masukkan Lokasi Rilis">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="penerbit" name="penerbit" placeholder="Masukkan nama devoloper">
                     </div>
                     <div class="form-group">
                         <select name="tahun" class="form-control form-control-user">
@@ -99,6 +101,9 @@
                                 <option value="<?= $i;?>"><?= $i;?></option>
                             <?php } ?>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="isbn" name="isbn" placeholder="Masukan Nomor Seri">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="stok" name="stok" placeholder="Masukkan nominal stok">

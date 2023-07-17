@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2022 at 02:53 PM
+-- Generation Time: Jul 17, 2023 at 08:17 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -71,18 +71,8 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `judul_buku`, `id_kategori`, `pengarang`, `penerbit`, `tahun_terbit`, `isbn`, `stok`, `dipinjam`, `dibooking`, `image`) VALUES
-(1, 'Statistika dengan Program Komputer', 1, 'Ahmad Kholiqul Amin', 'Deep Publish', 2014, '9786022809432', 5, 1, 2, 'img1557402455.jpg'),
-(2, 'Mudah Belajar Komputer untuk Anak', 1, 'Bambang Agus Setiawan', 'Huta Media', 2014, '9786025118500', 4, 3, 2, 'img1557402397.jpg'),
-(5, 'PHP Komplet', 1, 'Jubilee', 'Elex Media Komputindo', 2017, '8346753547', 3, 1, 3, 'img1555522493.jpg'),
-(10, 'Detektif Conan Ep 200', 9, 'Okigawa sasuke', 'Cultura', 2016, '874387583987', 5, 0, 0, 'img1557401465.jpg'),
-(14, 'Bahasa Indonesia', 2, 'Umri Nur\'aini dan Indriyani', 'Pusat Perbukuan', 2015, '757254724884', 3, 0, 0, 'img1557402703.jpg'),
-(15, 'Komunikasi Lintas Budaya', 5, 'Dr. Dedy Kurnia', 'Published', 2015, '878674646488', 5, 0, 0, 'img1557403156.jpg'),
-(16, 'Kolaborasi Codeigniter dan Ajax dalam Perancangan CMS', 1, 'Anton Subagia', 'Elex Media komputindo', 2017, '43345356577', 5, 0, 0, 'img1557403502.jpg'),
-(17, 'From Hobby to Money', 4, 'Deasylawati', 'Elex Media Komputindo', 2015, '87968686787879', 5, 0, 0, 'img1557403658.jpg'),
-(18, 'Buku Saku Pramuka', 8, 'Rudi Himawan', 'Pusat Perbukuan', 2016, '97868687978796', 6, 0, 0, 'img1557404613.jpg'),
-(19, 'Rahasia Keajaiban Bumi', 3, 'Nurul Ihsan', 'Luxima', 2014, '565756565768868', 5, 0, 0, 'img1557404689.jpg'),
-(20, 'Buku Pintar Puasa Wajib dan Sunnah Sepanjang Masa', 7, 'Ali Hasan', 'Luxima', 2011, '32342342344234', 5, 0, 0, 'img1557404775.jpg'),
-(21, 'Aspek Hukum dalam Penelitian', 6, 'Rianto Adi', 'Buku Obor', 2015, '7565646455757', 5, 0, 0, 'img1557404853.jpg');
+(26, 'Fall Guys', 7, 'Fall Guys', 'Fall Guys', 2018, '2313411', 21, 0, 0, 'img1658062114.jpg'),
+(28, 'red dead redemption 2', 2, 'Rockstar', 'Rockstar', 2020, '2131', 21, 0, 0, 'img1658062514.jpg');
 
 -- --------------------------------------------------------
 
@@ -96,6 +86,13 @@ CREATE TABLE `detail_pinjam` (
   `denda` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `detail_pinjam`
+--
+
+INSERT INTO `detail_pinjam` (`no_pinjam`, `Id_buku`, `denda`) VALUES
+('30062022001', 23, 5000);
+
 -- --------------------------------------------------------
 
 --
@@ -104,23 +101,24 @@ CREATE TABLE `detail_pinjam` (
 
 CREATE TABLE `kategori` (
   `id` int(11) NOT NULL,
-  `kategori` varchar(45) NOT NULL
+  `kategori` varchar(45) NOT NULL,
+  `nama` varchar(130) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kategori`
 --
 
-INSERT INTO `kategori` (`id`, `kategori`) VALUES
-(1, 'Komputer'),
-(2, 'Bahasa'),
-(3, 'Sains'),
-(4, 'Hobby'),
-(5, 'Komunikasi'),
-(6, 'Hukum'),
-(7, 'Agama'),
-(8, 'Populer'),
-(9, 'Komik');
+INSERT INTO `kategori` (`id`, `kategori`, `nama`) VALUES
+(1, 'Action', ''),
+(2, 'Adventure', ''),
+(3, 'Fighting', ''),
+(4, 'Sport', ''),
+(5, 'FPS', ''),
+(6, 'Fantasty', ''),
+(7, 'Chill', ''),
+(8, 'Populer', ''),
+(9, 'Cooking', '');
 
 -- --------------------------------------------------------
 
@@ -225,10 +223,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `nama`, `email`, `image`, `password`, `role_id`, `is_active`, `tanggal_input`, `alamat`) VALUES
 (18, 'ta', 'ew@gmail.com', 'pro1650843561.jpg', '$2y$10$MBDaJAOhPF6Wwu1t.W.Fvum7NXHdCVc1jwBOSr54v.4teVigTJCSS', 1, 1, 1650841890, 'ewa'),
-(19, 'uw', 'uw@gmail.com', 'default.jpg', '$2y$10$rt6wI6NzNIwskAe509YGTeTuqDcRYJxngoDsZ3pTuHfkBSTNFq9S6', 2, 1, 1650893974, 'ujang'),
-(20, 're', 're@gmail.com', 'default.jpg', '$2y$10$ZluGJ/ODtTyFPhc7DX1cu.fz57MmZ29rMV8qwYrTUA5CUb2PQgQ.a', 2, 1, 1650939357, 're'),
-(21, 'daru', 'daru@gmail.com', 'default.jpg', '$2y$10$Scd7Cj.m/cDVB7dDg/JnE.DN/0nd8SIvW/IJCE4wQBh9YCiWFGMoC', 2, 1, 1651029330, ''),
-(22, 'ryandaru', 'ryandaru@gmail.com', 'default.jpg', '$2y$10$v5/8wwBeVSFfS.RkNIeIEuEOfAOs.AsHNl.wDrnmUakPFXHpbHq2m', 2, 1, 1655036978, 'jalan jambu');
+(23, 'ew', 'ew', 'default.jpg', '$2y$10$9cwGi1sMwd4SeAO/eHELte202XD3ERA4qsdLyHEv1gNRSztutJqb2', 1, 1, 1679042087, 'ew');
 
 --
 -- Indexes for dumped tables
@@ -296,19 +291,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking_detail`
 --
 ALTER TABLE `booking_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -332,7 +327,7 @@ ALTER TABLE `temp`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -12,7 +12,7 @@ class Buku extends CI_Controller
     //manajemen Buku
     public function index()
     {
-        $data['judul'] = 'Data Buku';
+        $data['judul'] = 'Data Game';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $data['buku'] = $this->ModelBuku->getBuku()->result_array();
         $data['kategori'] = $this->ModelBuku->getKategori()->result_array();
@@ -185,7 +185,7 @@ class Buku extends CI_Controller
     //manajemen kategori
     public function kategori()
     {
-        $data['judul'] = 'Kategori Buku';
+        $data['judul'] = 'Kategori Game';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $data['kategori'] = $this->ModelBuku->getKategori()->result_array();
 

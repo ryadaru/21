@@ -28,7 +28,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>ID Buku</th>
-                                <th>Judul Buku</th>
+                                <th>Judul Game</th>
                                 <th>Pengarang</th>
                                 <th>Penerbit</th>
                                 <th>Tahun</th>

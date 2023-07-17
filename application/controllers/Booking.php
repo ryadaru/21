@@ -28,7 +28,7 @@ class Booking extends CI_Controller
         $dtb = $this->ModelBooking->showtemp(['id_user' => $id_user])->num_rows();
         
         if ($dtb < 1) {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-massege alert-danger" role="alert">Tidak Ada Buku dikeranjang</div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-massege alert-danger" role="alert">Tidak Ada Game dikeranjang</div>');
             redirect(base_url());
         } else {
             $data['temp'] = $this->db->query("select image, judul_buku, penulis, penerbit, tahun_terbit,id_buku from temp where id_user='$id_user'")->result_array();
@@ -67,24 +67,24 @@ class Booking extends CI_Controller
         $databooking = $this->db->query("select*from booking where id_user='$userid'")->num_rows();
         
         if ($databooking > 0) {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Masih Ada booking buku sebelumnya yang belum diambil.<br> Abmil Buku yang dibooking atau tunggu 1x24 Jam untuk bisa booking kembali </div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Masih Ada booking Game sebelumnya yang belum diambil.<br> Ambil Buku yang dibooking atau tunggu 1x24 Jam untuk bisa booking kembali </div>');
             redirect(base_url());
         }
         //jika buku yang diklik booking sudah ada di keranjang
         if ($temp > 0) {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Buku ini Sudah anda booking </div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Game ini Sudah anda booking </div>');
             redirect(base_url() . 'home');
         }
         //jika buku yang akan dibooking sudah mencapai 3 item
         if ($tempuser == 3) {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Booking Buku Tidak Boleh Lebih dari 3</div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Booking Game Tidak Boleh Lebih dari 3</div>');
             redirect(base_url() . 'home');
         }
         //membuat tabel temp jika belum ada
         $this->ModelBooking->createTemp();
         $this->ModelBooking->insertData('temp', $isi);
         //pesan ketika berhasil memasukkan buku ke keranjang
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Buku berhasil ditambahkan ke keranjang </div>');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Game berhasil ditambahkan ke keranjang </div>');
         redirect(base_url() . 'home');
     }
 
@@ -98,7 +98,7 @@ class Booking extends CI_Controller
         $this->ModelBooking->deleteData(['id_buku' => $id_buku], 'temp');
         $kosong = $this->db->query("select*from temp where id_user='$id_user'")->num_rows();
         if ($kosong < 1) {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-massege alert-danger" role="alert">Tidak Ada Buku dikeranjang</div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-massege alert-danger" role="alert">Tidak Ada Game dikeranjang</div>');
             redirect(base_url());
         } else {
             redirect(base_url() . 'booking');

@@ -9,7 +9,7 @@
  						<center>
  							<table class="table table-stripped">
  								<tr>
- 									<th nowrap>Judul Buku: </th>
+ 									<th nowrap>Judul Game: </th>
  									<td nowrap><?= $judul; ?></td>
  									<td>&nbsp;</td>
  									<th>Kategori: </th>
@@ -30,7 +30,7 @@
 									<td><?= $dibooking ?></td>
  								</tr>
  								<tr>
- 									<th>ISBN: </th>
+ 									<th>Code: </th>
  									<td><?= $isbn ?></td>
  									<td>&nbsp;</td>
  									<th>Tersedia: </th>
