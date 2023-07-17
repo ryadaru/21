@@ -89,9 +89,6 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="pengarang" name="pengarang" placeholder="Masukkan nama pengarang">
-                    </div>
-                    <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="penerbit" name="penerbit" placeholder="Masukkan nama penerbit">
                     </div>
                     <div class="form-group">
@@ -102,9 +99,6 @@
                                 <option value="<?= $i;?>"><?= $i;?></option>
                             <?php } ?>
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="isbn" name="isbn" placeholder="Masukkan ISBN">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="stok" name="stok" placeholder="Masukkan nominal stok">

@@ -154,7 +154,6 @@
                 <td><?= $b['pengarang']; ?></td>
                 <td><?= $b['penerbit']; ?></td>
                 <td><?= $b['tahun_terbit']; ?></td>
-                <td><?= $b['isbn']; ?></td>
                 <td><?= $b['stok']; ?></td>
               </tr>
             <?php } ?>
